@@ -1,54 +1,346 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #6a0dad, #b19cd9);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+}
+
+/* Navbar */
+.navbar {
+
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  color:black;
+  font-weight: bold;
+}
+
+.logo span {
+  color: gray;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color:black;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: gray;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 50px;
+}
+
+/* Profile Image */
+.profile-img img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #f1f1f1;
+}
+
+/* Intro Text */
+.intro-text p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.intro-text h1 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #111;
+}
+
+.intro-text h3 {
+  font-size: 26px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  border: 1px solid #333;
+  color: #333;
+}
+
+.btn-outline:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-filled {
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+.btn-filled:hover {
+  background-color: #000;
+}
+
+/* Social Icons */
+.social-icons a {
+  font-size: 26px;
+  color: #333;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* LinkedIn blue on hover */
+}
+.about-section {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-section h5 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.about-section h2 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
   }
-  
-  .quote-box {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(106, 13, 173, 0.3);
-    max-width: 400px;
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.intro-section .profile-img {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.intro-section .intro-text {
+  animation: slideInRight 1s ease forwards;
+}
+
+.about-section .about-container {
+  animation: slideInRight 1s ease forwards;
+}
+/* Container */
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Image */
+.about-img img {
+  width: 320px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Content */
+.about-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Cards */
+.about-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.about-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 20px;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.about-card i {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.about-card h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.about-card small {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Description */
+.about-content p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  text-align: left;
+}
+.intro-text {
+  animation-delay: 3s;
+}
+/* Hide toggle by default */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100vh;
+    background: #333;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 80px;
+    transition: left 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav-links li a {
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: black;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-  
-  h1 {
-    color: #6a0dad;
-    margin-bottom: 20px;
+
+  .about-img img {
+    width: 90%;
+    max-width: 300px;
   }
-  
-  #quote {
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 10px;
-    min-height: 60px; /* keep height stable */
+
+  .about-content {
+    padding: 20px;
   }
-  
-  #author {
-    color: #6a0dad;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-style: italic;
+
+  .about-cards {
+    flex-direction: column;
+    gap: 20px;
   }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #6a0dad;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+
+  .about-card {
+    width: 100%;
   }
-  
-  button:hover {
-    background-color: #7e3ecf;
-  }
-  
+}
+

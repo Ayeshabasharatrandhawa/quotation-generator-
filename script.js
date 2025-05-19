@@ -1,28 +1,13 @@
-const quoteElement = document.getElementById('quote');
-const authorElement = document.getElementById('author');
-const newQuoteBtn = document.getElementById('new-quote');
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-async function fetchQuote() {
-  try {
-    quoteElement.textContent = "Loading quote...";
-    authorElement.textContent = "";
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
 
-    const response = await fetch('https://api.quotable.io/random');
-    if (!response.ok) throw new Error('Failed to fetch quote');
-
-    const data = await response.json();
-
-    quoteElement.textContent = `"${data.content}"`;
-    authorElement.textContent = `- ${data.author}`;
-  } catch (error) {
-    quoteElement.textContent = "Oops, something went wrong!";
-    authorElement.textContent = "";
-    console.error(error);
-  }
-}
-
-// Load initial quote
-fetchQuote();
-
-// Fetch new quote on button click
-newQuoteBtn.addEventListener('click', fetchQuote);
+// Close nav on link click (optional UX enhancement)
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
